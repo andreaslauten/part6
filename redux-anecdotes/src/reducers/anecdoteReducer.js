@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { useSelector } from 'react-redux'
 import anecdoteService from '../services/anecdotes'
 
 const anecdoteSlice = createSlice({
@@ -13,7 +12,6 @@ const anecdoteSlice = createSlice({
       return action.payload
     },
     changeAnecdote(state, action) {
-      console.log(action.payload)
       return state.map(anecdote => 
         anecdote.id !== action.payload.id ? anecdote : action.payload.changedAnecdote
       )
