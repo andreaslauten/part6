@@ -17,8 +17,7 @@ export const { setNotificationWithoutTimeout, clearNotification } = notification
 
 export const setNotification = ( message, delayInSeconds ) => {
   return (dispatch) => {
-    console.log(message)
-    dispatch(setNotification(message))
+    dispatch(setNotificationWithoutTimeout(message))
     setTimeout(() => {
       dispatch(clearNotification())
     }, delayInSeconds * 1000)
